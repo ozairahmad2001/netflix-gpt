@@ -15,6 +15,10 @@
 - Created Redux stoer with userSlice.
 - Implemented Sign out API.
 - Implemented update profile API. 
+- Bugfix - If the user is not logged in then redirect browse page to login and vice-verse.
+- Bugfix - Signup user display name and display picture update 
+- Unsubscribed from our onAuthStateChanged callback.
+- Add hard coded values to the config file.
 
 # Features
 - Login/Signup Page
