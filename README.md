@@ -19,7 +19,16 @@
 - Bugfix - Signup user display name and display picture update 
 - Unsubscribed from our onAuthStateChanged callback.
 - Add hard coded values to the config file.
-
+- Register TMDB API and created an account to get access token
+- Get data from TMDB now playing movies list API
+- Custom hook for nowPlayingMoovies
+- Create movieSlice
+- Update the store with movies data.
+- Planning for mainContainer and secondaryContainer
+- Fetch data for trailer video
+- Update store with trailer video data
+- Embedded the YouTube video trailer and made it autoplay and mute
+- Tailwind classes to make main container look good
 # Features
 - Login/Signup Page
    - Sign in/ Sign up form

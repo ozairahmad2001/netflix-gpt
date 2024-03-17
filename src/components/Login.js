@@ -81,7 +81,7 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div className="absolute ">
+      <div className="absolute">
         <img className="h-screen w-screen" src={netflixbg} alt="bg-img" />
       </div>
       <form

@@ -45,7 +45,7 @@ const Header = () => {
     //unsubscribe to onAuthStateChanged when the component unmounts.
   }, []);
   return (
-    <div className=" absolute z-10 w-screen px-8 py-1 bg-gradient-to-b from-black flex justify-between">
+    <div className="absolute z-10 w-screen px-8 py-1 bg-gradient-to-b from-black flex justify-between">
       <img className="w-44 mx-auto md:mx-0" src={logo} alt="logo" />
 
       {user && (
