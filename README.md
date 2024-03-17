@@ -29,6 +29,9 @@
 - Update store with trailer video data
 - Embedded the YouTube video trailer and made it autoplay and mute
 - Tailwind classes to make main container look good
+- Build secondary container with movie list and movie cards
+- Fetch data from TMDB API for popular and top rated movies
+- Populated the movies list and movie cards with the data fetched from the APIs.
 # Features
 - Login/Signup Page
    - Sign in/ Sign up form

@@ -13,20 +13,20 @@ import { addUser } from "../utils/userSlice";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const [isSignInFrom, setIsSignForm] = useState(true);
+  const [isSignInForm, setIsSignForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
   const toggleForm = () => {
-    setIsSignForm(!isSignInFrom);
+    setIsSignForm(!isSignInForm);
   };
 
   const handleSubmitButton = () => {
     const message = checkValidData(email.current.value, password.current.value);
     setErrorMessage(message);
 
-    if (!isSignInFrom) {
+    if (!isSignInForm) {
       createUserWithEmailAndPassword(
         auth,
         email.current.value,
@@ -82,46 +82,47 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img className="h-screen w-screen" src={netflixbg} alt="bg-img" />
+        <img className="h-screen w-screen" src={netflixbg} alt="logo" />
       </div>
       <form
-        onSubmit={(e) => {
-          e.preventDefault();
-        }}
-        className="w-3/12 absolute p-12 bg-black my-36 mx-auto left-0 right-0 text-white opacity-80 rounded-lg">
-        <h1 className="text-3xl font-semibold py-4">
-          {isSignInFrom ? "Sign In" : "Sign Up"}{" "}
+        onSubmit={(e) => e.preventDefault()}
+        className="w-full md:w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
+      >
+        <h1 className="font-bold text-3xl py-4">
+          {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
-        {!isSignInFrom && (
+
+        {!isSignInForm && (
           <input
             ref={name}
             type="text"
             placeholder="Full Name"
-            className="p-4 my-4 bg-gray-700 w-full"
+            className="p-4 my-4 w-full bg-gray-700"
           />
         )}
         <input
           ref={email}
           type="text"
           placeholder="Email Address"
-          className="p-4 my-4 bg-gray-700 w-full"
+          className="p-4 my-4 w-full bg-gray-700"
         />
         <input
           ref={password}
           type="password"
           placeholder="Password"
-          className="p-4 my-4 bg-gray-700 w-full"
+          className="p-4 my-4 w-full bg-gray-700"
         />
-        <p>{errorMessage}</p>
+        <p className="text-red-500 font-bold text-lg py-2">{errorMessage}</p>
         <button
+          className="p-4 my-6 bg-red-700 w-full rounded-lg"
           onClick={handleSubmitButton}
-          className="p-4 my-4 bg-red-700 w-full rounded-lg">
-          Sign In
+        >
+          {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
-        <p onClick={toggleForm} className="cursor-pointer py-4">
-          {isSignInFrom
-            ? "New to Netflix? Sign up now."
-            : "Already registered? Go to Sign In."}
+        <p className="py-4 cursor-pointer" onClick={toggleForm}>
+          {isSignInForm
+            ? "New to Netflix? Sign Up Now"
+            : "Already registered? Sign In Now."}
         </p>
       </form>
     </div>
@@ -129,3 +130,6 @@ const Login = () => {
 };
 
 export default Login;
+
+
+
